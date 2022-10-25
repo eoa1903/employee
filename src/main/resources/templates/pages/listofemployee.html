@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee</title>
+</head>
+<body>
+
+<p>List of employees</p>
+<ul>
+    <li th:each="employee : ${employees}">
+        <div th:text="${employee.id}"></div>
+        <div th:text="${employee.firstname}"></div>
+        <div th:text="${employee.lastname}"></div>
+        <div th:text="${employee.gender}"></div>
+    </li>
+</ul>
+</body>
+</html>
