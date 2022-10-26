@@ -2,7 +2,6 @@ package com.employees.employee.controller;
 
 import com.employees.employee.entity.Employee;
 import com.employees.employee.repository.EmployeeRepository;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,12 +9,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Iterator;
-import java.util.List;
 
-@RestController
+@org.springframework.web.bind.annotation.RestController
 //@CrossOrigin(origins ="http://localhost:4200")
 @Slf4j
-public class MainController {
+public class RestController {
     @Autowired
     private EmployeeRepository employeeRepository;
     @GetMapping("/all")
