@@ -5,7 +5,9 @@ import com.employees.employee.repository.EmployeeRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Iterator;
@@ -21,7 +23,7 @@ public class RestController {
         return new ResponseEntity<>( employeeRepository.findAll().iterator(), HttpStatus.ACCEPTED);
     }
     @PostMapping("/save")
-    public ResponseEntity<String> saveEmployee(@RequestBody Employee employee){
+    public ResponseEntity<String> saveEmployee(@Validated @RequestBody Employee employee){
         log.info(String.valueOf(employee));
         employeeRepository.save(employee);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
